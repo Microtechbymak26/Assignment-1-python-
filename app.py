@@ -40,7 +40,7 @@ if files :
             if st.checkbox(f"Show Charts - {file.name}") and not df.select_dtypes(include="number").empty:
                 st.bar_chart(df.select_dtypes(include="number").iloc[:, :2])
 
-            format_choise = st.radio(f"Convert {file.name} to:", ["csv", "Excel"],key=file.name)
+            format_choise = st.radio(f"Convert {file.name} to:", ["csv", "xlsx"],key=file.name)
 
             if st.button(f"Download {file.name} as {format_choise}"):
                 output = BytesIO()
